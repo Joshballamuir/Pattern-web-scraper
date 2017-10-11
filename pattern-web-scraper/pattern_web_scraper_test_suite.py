@@ -55,7 +55,6 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     def test_blacklist(self):
         """Does it identify when a blacklisted word appears?"""
         self.assertEqual('Not found',pattern_web_scraper_functions.gen_name(['josh','profiles']))
-
 #linkedin_google_search
     def test_is_synonyms_1_selected(self):
         """Does it select the correct list?"""
@@ -119,12 +118,11 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
                  ],pattern_web_scraper_functions.linkedin_google_search('technology director
                  '))
 
-
-#gen_html_text
 #html_dump_prep
 #word_finder
 #name_compilation
 #name_final
+#gen_html_text
 
 if __name__ == '__main__':
     unittest.main()

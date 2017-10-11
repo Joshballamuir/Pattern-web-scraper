@@ -3,8 +3,8 @@ import re
 import requests
 import ssl
 import sys
-from pattern_web_scraper_test_suite import blacklist,synonyms_1,synonyms_2,synonyms_3,url
-#from pattern_web_scraper_executable import blacklist,synonyms_1,synonyms_2,synonyms_3,url
+from pattern_web_scraper_test_suite import blacklist,synonyms_1,synonyms_2,synonyms_3,url,idword
+#from pattern_web_scraper_executable import blacklist,synonyms_1,synonyms_2,synonyms_3,url,idword
 
 session = requests.Session()
 session.max_redirects = 20
@@ -21,6 +21,7 @@ class MyAdapter(requests.adapters.HTTPAdapter):
             ssl_version=ssl.PROTOCOL_TLSv1
             )
 
+###TESTED FUNCTIONS###:
 def slug(slug_item):
     return(re.sub(r' ','+',re.sub(r'&','and',slug_item)).lower())
 #converts item to name to a valid google search format
@@ -50,21 +51,8 @@ def linkedin_google_search(employee):
         url_list.append(url+i+'+linkedin')
     return(url_list)
 #generates start urls
-###TESTED FUNCTIONS###
 
-def gen_html_text(urls,idword):
-    for i in urls:
-        session.mount(site,MyAdapter())
-        try:
-            html_dump = html_dump + session.get(i,allow_redirects=False).text
-        except(
-            requests.exceptions.SSLError,requests.exceptions.ConnectionError,
-            requests.packages.urllib3.exceptions.NewConnectionError,
-            requests.packages.urllib3.exceptions.MaxRetryError
-            ) as e:
-                continue
-    return(html_dump)
-#generates the html text
+###UNTESTED FUNCTIONS###:
 def html_dump_prep(html_dump):
     re.sub(non_letters.sub(' ',html_dump).translate(non_bmp_map).lower())
     for i in prep:
@@ -100,4 +88,17 @@ def name_final(final_names):
     except IndexError:
         print('Not found')
 #finalises and reformats 2 names to be returned
-###UNTESTED FUNCTIONS###
+
+def gen_html_text(url_list,idword):
+    for i in url_list:
+        session.mount(site,MyAdapter())
+        try:
+            html_dump = html_dump + session.get(i,allow_redirects=False).text
+        except(
+            requests.exceptions.SSLError,requests.exceptions.ConnectionError,
+            requests.packages.urllib3.exceptions.NewConnectionError,
+            requests.packages.urllib3.exceptions.MaxRetryError
+            ) as e:
+                continue
+    return(html_dump)
+#generates the html text
