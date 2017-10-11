@@ -12,6 +12,24 @@ blacklist = [
          'area','the','head','of','uk'
          ]
          #blacklist for words frequently appearing where names are found in search results
+synonyms_1 = [
+    'chief executive officer','ceo',
+    'director','head of company',
+    'chairman','founder'
+    ]
+synonyms_2 = [
+    'chief financial officer','cfo',
+    'head of finance','accounts',
+    'head of accounts','treasurer'
+    ]
+synonyms_3 = [
+    'chief technology officer','cto',
+    'technology director','head of technology',
+    'development','chief of technology'
+    ]
+    #synonym lists to be plugged into programme at user's request
+url = ('https://www.google.co.uk/search?q=test')
+
 class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     """Tests for `new_name_finder_functions.py`."""
 #slug
@@ -39,6 +57,69 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
         self.assertEqual('Not found',pattern_web_scraper_functions.gen_name(['josh','profiles']))
 
 #linkedin_google_search
+    def test_is_synonyms_1_selected(self):
+        """Does it select the correct list?"""
+        self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief executive officer+linkedin',
+            'https://www.google.co.uk/search?q=testceo+linkedin',
+            'https://www.google.co.uk/search?q=testdirector+linkedin',
+            'https://www.google.co.uk/search?q=testhead of company+linkedin',
+            'https://www.google.co.uk/search?q=testchairman+linkedin',
+            'https://www.google.co.uk/search?q=testfounder+linkedin'
+                ],pattern_web_scraper_functions.linkedin_google_search('ceo'))
+    def test_is_synonyms_2_selected(self):
+        """Does it select the correct list?"""
+        self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief financial officer+linkedin',
+            'https://www.google.co.uk/search?q=testcfo+linkedin',
+            'https://www.google.co.uk/search?q=testhead of finance+linkedin',
+            'https://www.google.co.uk/search?q=testaccounts+linkedin',
+            'https://www.google.co.uk/search?q=testhead of accounts+linkedin',
+            'https://www.google.co.uk/search?q=testtreasurer+linkedin'
+                ],pattern_web_scraper_functions.linkedin_google_search('cfo'))
+    def test_is_synonyms_3_selected(self):
+         """Does it select the correct list?"""
+         self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief technology officer+linkedin',
+            'https://www.google.co.uk/search?q=testcto+linkedin',
+            'https://www.google.co.uk/search?q=testtechnology director+linkedin',
+            'https://www.google.co.uk/search?q=testhead of technology+linkedin',
+            'https://www.google.co.uk/search?q=testdevelopment+linkedin',
+            'https://www.google.co.uk/search?q=testchief of technology+linkedin'
+                 ],pattern_web_scraper_functions.linkedin_google_search('cto'))
+    def test_is_synonyms_1_selected_alternate(self):
+        """Does it select the correct list?"""
+        self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief executive officer+linkedin',
+            'https://www.google.co.uk/search?q=testceo+linkedin',
+            'https://www.google.co.uk/search?q=testdirector+linkedin',
+            'https://www.google.co.uk/search?q=testhead of company+linkedin',
+            'https://www.google.co.uk/search?q=testchairman+linkedin',
+            'https://www.google.co.uk/search?q=testfounder+linkedin'
+                ],pattern_web_scraper_functions.linkedin_google_search('chairman'))
+    def test_is_synonyms_2_selected_alternate(self):
+        """Does it select the correct list?"""
+        self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief financial officer+linkedin',
+            'https://www.google.co.uk/search?q=testcfo+linkedin',
+            'https://www.google.co.uk/search?q=testhead of finance+linkedin',
+            'https://www.google.co.uk/search?q=testaccounts+linkedin',
+            'https://www.google.co.uk/search?q=testhead of accounts+linkedin',
+            'https://www.google.co.uk/search?q=testtreasurer+linkedin'
+                ],pattern_web_scraper_functions.linkedin_google_search('treasurer'))
+    def test_is_synonyms_3_selected_alternate(self):
+         """Does it select the correct list?"""
+         self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief technology officer+linkedin',
+            'https://www.google.co.uk/search?q=testcto+linkedin',
+            'https://www.google.co.uk/search?q=testtechnology director+linkedin',
+            'https://www.google.co.uk/search?q=testhead of technology+linkedin',
+            'https://www.google.co.uk/search?q=testdevelopment+linkedin',
+            'https://www.google.co.uk/search?q=testchief of technology+linkedin'
+                 ],pattern_web_scraper_functions.linkedin_google_search('technology director
+                 '))
+
+
 #gen_html_text
 #html_dump_prep
 #word_finder
@@ -47,3 +128,4 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+#add != as well as =

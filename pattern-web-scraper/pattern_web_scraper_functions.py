@@ -3,6 +3,8 @@ import re
 import requests
 import ssl
 import sys
+from pattern_web_scraper_test_suite import blacklist,synonyms_1,synonyms_2,synonyms_3,url
+#from pattern_web_scraper_executable import blacklist,synonyms_1,synonyms_2,synonyms_3,url
 
 session = requests.Session()
 session.max_redirects = 20
@@ -23,8 +25,6 @@ def slug(slug_item):
     return(re.sub(r' ','+',re.sub(r'&','and',slug_item)).lower())
 #converts item to name to a valid google search format
 def gen_name(new_name):
-    #from pattern_web_scraper_executable import blacklist
-    from pattern_web_scraper_test_suite import blacklist
     first_name = new_name[0]
     try:
         last_name = new_name[1]
@@ -38,10 +38,8 @@ def gen_name(new_name):
             continue
     return(first_name,last_name,full_name)
 #generates list of names from descriptions of linkedin search results checked against blacklist
-###TESTED FUNCTIONS###
-
 def linkedin_google_search(employee):
-    data = ''
+    url_list = []
     if employee in synonyms_1:
         synonyms = synonyms_1
     elif employee in synonyms_2:
@@ -49,9 +47,11 @@ def linkedin_google_search(employee):
     elif employee in synonyms_3:
         synonyms = synonyms_3
     for i in synonyms:
-        urls.append(url+i+'+linkedin')
-    return(urls)
+        url_list.append(url+i+'+linkedin')
+    return(url_list)
 #generates start urls
+###TESTED FUNCTIONS###
+
 def gen_html_text(urls,idword):
     for i in urls:
         session.mount(site,MyAdapter())

@@ -49,6 +49,7 @@ blacklist = synonyms_1+synonyms_2+synonyms_3+company_name+[
          'area','the','head','of','uk'
          ]
          #blacklist for words frequently appearing where names are found in search results
+slug(googlelinkedinurlsetc)
 wordlist_generator(
     new_name_finder_functions.format_for_keyword(new_name_finder_functions.linkedin_google_search)).split()
 name_final(
