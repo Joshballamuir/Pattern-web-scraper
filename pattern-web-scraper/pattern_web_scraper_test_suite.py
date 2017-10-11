@@ -12,10 +12,6 @@ blacklist = [
          'area','the','head','of','uk'
          ]
          #blacklist for words frequently appearing where names are found in search results
-first_name_list = []
-last_name_list = []
-full_name_list = []
-
 class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     """Tests for `new_name_finder_functions.py`."""
 #slug
@@ -41,6 +37,7 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     def test_blacklist(self):
         """Does it identify when a blacklisted word appears?"""
         self.assertEqual('Not found',pattern_web_scraper_functions.gen_name(['josh','profiles']))
+
 
 
 #linkedin_google_search
