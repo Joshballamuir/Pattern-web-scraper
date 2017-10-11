@@ -38,8 +38,6 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
         """Does it identify when a blacklisted word appears?"""
         self.assertEqual('Not found',pattern_web_scraper_functions.gen_name(['josh','profiles']))
 
-
-
 #linkedin_google_search
 #gen_html_text
 #html_dump_prep
