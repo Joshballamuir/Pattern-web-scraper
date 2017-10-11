@@ -61,7 +61,6 @@ print(director1)
 print(director2)
 #gen_name(new_name)
 
-#upload to github
 #separate all variables from functions. Variables must be changeable - can bridge this into machine learning!!
 #use synonyms included here on website bot to prove concept of machine learning
 #integrate into emails using files and dependencies as have began to here!

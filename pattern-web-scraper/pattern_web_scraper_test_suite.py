@@ -52,5 +52,3 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-#now on github!
