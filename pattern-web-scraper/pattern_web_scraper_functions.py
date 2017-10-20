@@ -88,7 +88,6 @@ def name_final(final_names):
     except IndexError:
         print('Not found')
 #finalises and reformats 2 names to be returned
-
 def gen_html_text(url_list,idword):
     for i in url_list:
         session.mount(site,MyAdapter())
