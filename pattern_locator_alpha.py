@@ -10,4 +10,4 @@ def pattern_word_locator(html_dump):
         words = words + (for i in examples)[-1],(for i in examples)[1]
     possible_pattern_word = (words).most_common(50))
     return(possible_pattern_word)
-#github test
+#github test123
