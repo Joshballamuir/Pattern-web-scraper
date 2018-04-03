@@ -4,21 +4,10 @@ import pattern_web_scraper_functions
 first_name_list = []
 last_name_list = []
 full_name_list = []
-synonyms_1 = [
-    'chief executive officer','ceo',
-    'director','head of company',
-    'chairman','founder'
-    ]
-synonyms_2 = [
-    'chief financial officer','cfo',
-    'head of finance','accounts',
-    'head of accounts','treasurer'
-    ]
-synonyms_3 = [
-    'chief technology officer','cto',
-    'technology director','head of technology',
-    'development','chief of technology'
-    ]
+synonyms_1 = input("Enter synonym csv1")
+synonyms_2 = input("Enter synonym csv2")
+synonyms_3 = input("Enter synonym csv3")
+
     #synonym lists to be plugged into programme at user's request
 prep = [
     'J:','%'
@@ -39,15 +28,7 @@ urls = [
     ]
 urls1 = [
     ]
-blacklist = synonyms_1+synonyms_2+synonyms_3+company_name+[
-         '&','#',':',';','(',')','group','technologies','direct','careers',
-         'tooshort','profiles', 'accountant', 'jobs', 'united', 'kingdom',
-         'international', 'plc','lp', 'linkedin','ltd','limited','...',
-         '/script','/body','director','finance','cfo','chief','financial',
-         'officer','controller','accounts','manager','management','fd',
-         'presidential','articles,','salaries','telecom','solutions',
-         'area','the','head','of','uk'
-         ]
+blacklist = synonyms_1+synonyms_2+synonyms_3+company_name+input("Enter blacklist csv")
          #blacklist for words frequently appearing where names are found in search results
 slug(googlelinkedinurlsetc)
 wordlist_generator(
