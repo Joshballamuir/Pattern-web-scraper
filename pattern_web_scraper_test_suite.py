@@ -46,6 +46,7 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     def test_is_company_name_valid(self):
         """Does it validate company name?"""
         self.assertEqual('hello+and++++bonjour',pattern_web_scraper_functions.slug('hELlo &    BONjOUR'))
+
 #gen_name
     def test_is_full_name_output(self):
         """Does it output first_name, last_name and full_name from a list?"""
