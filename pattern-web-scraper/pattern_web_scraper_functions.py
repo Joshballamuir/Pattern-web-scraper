@@ -1,6 +1,11 @@
 
 import pattern_web_scraper_test_suite
 
+def slug(slug_item):
+    return(re.sub(r' ','+',re.sub(r'&','and',slug_item)).lower())
+    #converts item to name to a valid google search format
+
+#TESTED
 def linkedin_google_search(employee):
     url_list = []
     if employee in synonyms:
@@ -9,9 +14,7 @@ def linkedin_google_search(employee):
     return(url_list)
     #generates start urls
 
-def slug(slug_item):
-    return(re.sub(r' ','+',re.sub(r'&','and',slug_item)).lower())
-    #converts item to name to a valid google search format
+
 
 def gen_name(new_name):
     first_name = new_name[0]
