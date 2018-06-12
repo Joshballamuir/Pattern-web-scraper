@@ -115,8 +115,7 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
             'https://www.google.co.uk/search?q=testhead of technology+linkedin',
             'https://www.google.co.uk/search?q=testdevelopment+linkedin',
             'https://www.google.co.uk/search?q=testchief of technology+linkedin'
-                 ],pattern_web_scraper_functions.linkedin_google_search('technology director
-                 '))
+                 ],pattern_web_scraper_functions.linkedin_google_search('technology director'))
 
 #html_dump_prep
 #word_finder
