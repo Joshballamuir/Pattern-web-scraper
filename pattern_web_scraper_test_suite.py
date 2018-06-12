@@ -1,5 +1,5 @@
 import unittest
-import pattern_web_scraper_functions
+from pattern_web_scraper_functions import pattern_web_scraper_functions
 
 #import from pattern_web_scraper_executable:
 blacklist = [
