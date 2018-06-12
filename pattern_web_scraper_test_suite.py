@@ -1,5 +1,5 @@
 import unittest
-from pattern_web_scraper_functions import pattern_web_scraper_functions
+import pattern_web_scraper_functions
 
 #import from pattern_web_scraper_executable:
 blacklist = [
@@ -36,7 +36,6 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     def test_is_company_name_lower(self):
         """Does it convert to lower case?"""
         self.assertEqual('hello',pattern_web_scraper_functions.slug('hELlO'))
-
     def test_is_company_name_spaced(self):
         """Does it replace ' ' with '+'?"""
         self.assertEqual('h+e+l+l+o',pattern_web_scraper_functions.slug('h e l l o'))
@@ -46,7 +45,6 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
     def test_is_company_name_valid(self):
         """Does it validate company name?"""
         self.assertEqual('hello+and++++bonjour',pattern_web_scraper_functions.slug('hELlo &    BONjOUR'))
-
 #gen_name
     def test_is_full_name_output(self):
         """Does it output first_name, last_name and full_name from a list?"""
@@ -108,17 +106,17 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
             'https://www.google.co.uk/search?q=testhead of accounts+linkedin',
             'https://www.google.co.uk/search?q=testtreasurer+linkedin'
                 ],pattern_web_scraper_functions.linkedin_google_search('treasurer'))
-    #def test_is_synonyms_3_selected_alternate(self):
-    #     """Does it select the correct list?"""
-    #     self.assertEqual([
-    #        'https://www.google.co.uk/search?q=testchief technology officer+linkedin',
-    #        'https://www.google.co.uk/search?q=testcto+linkedin',
-    #        'https://www.google.co.uk/search?q=testtechnology director+linkedin',
-    #        'https://www.google.co.uk/search?q=testhead of technology+linkedin',
-    #        'https://www.google.co.uk/search?q=testdevelopment+linkedin',
-    #        'https://www.google.co.uk/search?q=testchief of technology+linkedin'
-    #             ],pattern_web_scraper_functions.linkedin_google_search('technology director
-    #             '))
+    def test_is_synonyms_3_selected_alternate(self):
+         """Does it select the correct list?"""
+         self.assertEqual([
+            'https://www.google.co.uk/search?q=testchief technology officer+linkedin',
+            'https://www.google.co.uk/search?q=testcto+linkedin',
+            'https://www.google.co.uk/search?q=testtechnology director+linkedin',
+            'https://www.google.co.uk/search?q=testhead of technology+linkedin',
+            'https://www.google.co.uk/search?q=testdevelopment+linkedin',
+            'https://www.google.co.uk/search?q=testchief of technology+linkedin'
+                 ],pattern_web_scraper_functions.linkedin_google_search('technology director
+                 '))
 
 #html_dump_prep
 #word_finder
