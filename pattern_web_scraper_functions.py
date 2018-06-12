@@ -9,9 +9,9 @@ def slug(slug_item):
 def linkedin_google_search(employee):
     url_list = []
     if employee in synonyms:
-    for i in synonyms:
-        url_list.append(url+i+'+linkedin')
-    return(url_list)
+        for i in synonyms:
+            url_list.append(url+i+'+linkedin')
+        return(url_list)
     #generates start urls
 
 
