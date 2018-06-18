@@ -21,7 +21,7 @@ blacklist = subject+synonyms+input("Enter blacklist csv ")
 #synonym lists to be plugged into programme at user's request. Soon automate with thesaurus programme
 
 
-google_page1 = ('https://www.google.co.uk/search?q='+subject)
+google_page1 = ('https://www.google.co.uk/search?q='+subject) #make scrapy
 google_page2 = google_page1+'+&start=10'
 google_page3 = google_page1+'+&start=20'
 
