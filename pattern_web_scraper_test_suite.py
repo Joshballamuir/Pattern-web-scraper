@@ -1,10 +1,14 @@
 import unittest
 import pattern_web_scraper_functions
-
+import position_blacklist from '/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/'
 #example_test_variables:
-subject = "mcdonalds"
-synonyms = "/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/cfo.csv"
-blacklist = subject+synonyms+"/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/position_blacklist.csv"
+subject = 'mcdonalds'
+#synonyms = "/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/cfo.csv"
+#blacklist = subject+"/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/position_blacklist.txt" #+synonyms
+
+
+
+print(blacklist)
 
 name_list = ['josh','balla-muir','hello','fvfvrvfrd']
 
@@ -32,7 +36,7 @@ class pattern_web_scraper_functions_TestCase(unittest.TestCase):
 #gen_name:
     def test_is_full_name_output(self):
         """Does it output first_name, last_name and full_name from a list?"""
-        self.assertEqual('josh balla-muir josh balla-muir',pattern_web_scraper_functions.gen_name(name_list))
+        self.assertEqual(('josh', 'balla-muir', 'josh balla-muir'),pattern_web_scraper_functions.gen_name(['josh', 'balla-muir']))
     def test_last_tooshort(self):
         """Does it identify when word is too short?"""
         self.assertEqual('Not found',pattern_web_scraper_functions.gen_name(['balla-muir']))

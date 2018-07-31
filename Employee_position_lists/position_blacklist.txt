@@ -1,0 +1,7 @@
+['&','#',':',';','(',')','group','technologies','direct','careers',
+'tooshort','profiles', 'accountant', 'jobs', 'united', 'kingdom',
+'international', 'plc','lp', 'linkedin','ltd','limited','...',
+'/script','/body','director','finance','cfo','chief','financial',
+'officer','controller','accounts','manager','management','fd',
+'presidential','articles,','salaries','telecom','solutions',
+'area','the','head','of','uk']

@@ -26,6 +26,7 @@ def slug(slug_item):
 
 #TESTING:
 def gen_name(new_name):
+
     first_name = new_name[0]
     try:
         last_name = new_name[1]
@@ -39,7 +40,7 @@ def gen_name(new_name):
             continue
     return(first_name,last_name,full_name)
 #generates list of names from descriptions of linkedin search results checked against blacklist
-
+#get txt list comprehension right. eventually convert to psql
 
 
 #UNTESTED:

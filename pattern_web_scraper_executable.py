@@ -34,3 +34,6 @@ google_page3 = google_page1+'+&start=20'
 
 #AIM TO MAKE ALL VARIABLES DISPOSABLE!
 #integrate into emails using files and dependencies as have began to here!
+#eventually integrate these tools into excel macros
+#eventually replace excel with psql outright?
+#integrate proxies and captcha bypasses for robustness
