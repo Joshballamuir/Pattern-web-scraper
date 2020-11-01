@@ -33,7 +33,7 @@ def gen_name(new_name):
     except IndexError:
         return('Not found')
     full_name = first_name+' '+last_name
-    for i in pattern_web_scraper_test_suite.blacklist:
+    for i in pattern_web_scraper_test_suite.name_list:
         if i in full_name:
             return('Not found')
         else:

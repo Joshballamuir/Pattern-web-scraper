@@ -1,14 +1,18 @@
 import unittest
 import pattern_web_scraper_functions
-import position_blacklist from '/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/'
+#import position_blacklist from '/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/'
 #example_test_variables:
 subject = 'mcdonalds'
 #synonyms = "/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/cfo.csv"
-#blacklist = subject+"/Users/josh/josh_github/Pattern-web-scraper/Employee_position_lists/position_blacklist.txt" #+synonyms
+blacklist = ['&','#',':',';','(',')','group','technologies','direct','careers',
+'tooshort','profiles', 'accountant', 'jobs', 'united', 'kingdom',
+'international', 'plc','lp', 'linkedin','ltd','limited','...',
+         '/script','/body','director','finance','cfo','chief','financial',
+         'officer','controller','accounts','manager','management','fd',
+         'presidential','articles,','salaries','telecom','solutions',
+         'area','the','head','of','uk']
 
-
-
-print(blacklist)
+#print(blacklist)
 
 name_list = ['josh','balla-muir','hello','fvfvrvfrd']
 
